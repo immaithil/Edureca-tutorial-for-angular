@@ -1,0 +1,12 @@
+<h2>Courses by me</h2>
+<!-- Here word uppercase is used as interpolation binding -->
+<ul class="courses">
+    <li *ngFor="let course of courses"
+    [class.selected]="course===selectedCourse"
+    (click)="onSelect(course)">
+    <span class="badge">{{course.id}}</span>
+        {{course.name}}
+    </li>
+</ul>
+<app-course-detail [course]="selectedCourse"></app-course-detail>
+
